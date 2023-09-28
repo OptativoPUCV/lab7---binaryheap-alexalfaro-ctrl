@@ -42,9 +42,10 @@ void heap_push(Heap* pq, void* data, int priority){
     nuevonodo.priority=priority;
     if(pq->capac==pq->size){
       pq->capac=pq->capac*2+1;
-      
+      pq->heapArray=realloc(pq->heapArray,pq->capac*sizeof(heapElem));
     }
-    int i=pq->size;
+    int i;
+    i=pq->size;
     pq->heapArray[i]=nuevonodo;
     pq->size++;
     while(i!=0 && pq->heapArray[(i - 1) / 2].priority < pq->heapArray[i].priority){
