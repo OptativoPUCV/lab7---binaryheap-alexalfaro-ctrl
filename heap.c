@@ -36,7 +36,7 @@ void swap(heapElem* x, heapElem* y) {
 }
 
 void heap_push(Heap* pq, void* data, int priority){
-  if(pq!=NULL&&data!=NULL&&priority<0){
+  
     heapElem nuevonodo;
     nuevonodo.data=data;
     nuevonodo.priority=priority;
@@ -53,7 +53,6 @@ void heap_push(Heap* pq, void* data, int priority){
       i=(i - 1) / 2;
     }
     
-  }
 
 }
 
