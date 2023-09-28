@@ -32,3 +32,9 @@ heap.c:51:29: error: ‘j’ undeclared (first use in this function)
 heap.c:51:29: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 70acd4a
+Thu 28 Sep 2023 07:28:53 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|2
+total_score: 20/70
+d4d9505
