@@ -47,7 +47,7 @@ void heap_push(Heap* pq, void* data, int priority){
     int i=pq->size;
     pq->heapArray[i]=nuevonodo;
     pq->size++;
-    while(i!=0 && pq->heapArray[(i - 1) / 2].priority > pq->heapArray[i].priority){
+    while(i!=0 && pq->heapArray[(i - 1) / 2].priority < pq->heapArray[i].priority){
       swap(&(pq->heapArray[i]),&(pq->heapArray[(i - 1) / 2]));
       i=((i - 1) / 2);
     }
