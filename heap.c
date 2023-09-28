@@ -36,5 +36,6 @@ Heap* createHeap(){
   Heap *monticulo=(Heap*)malloc(sizeof(Heap));
   monticulo->capac=3;
   monticulo->size=0;
+  monticulo->heapArray=(heapElem*)malloc(monticulo->capac*sizeof(heapElem));
   return monticulo;
 }
