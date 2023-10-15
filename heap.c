@@ -52,13 +52,32 @@ void heap_push(Heap* pq, void* data, int priority){
       swap(&(pq->heapArray[i]),&(pq->heapArray[(i - 1) / 2]));
       i=(i - 1) / 2;
     }
-    
 
 }
 
 
 void heap_pop(Heap* pq){
-
+  if(pq==NULL)return;
+  
+  if(pq->size>0){
+    pq->heapArray[0]=pq->heapArray[pq->size-1];
+    pq->size--;
+    int i=0;
+    while(i<pq->size){
+      int izq=2*i+1;
+      int der=2*i+2;
+      int max=i;
+      if(izq<pq->size && pq->heapArray[izq].priority > pq->heapArray[max].priority){
+        max=izq;
+      }
+      if(der<pq->size && pq->heapArray[der].priority > pq->heapArray[max].priority){
+        max=der;
+      }
+      if(max==i)break;
+      swap(&(pq->heapArray[i]),&(pq->heapArray[max]));
+      i=max;
+    }
+  }
 }
 
 Heap* createHeap(){
